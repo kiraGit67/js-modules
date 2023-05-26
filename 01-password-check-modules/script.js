@@ -1,9 +1,9 @@
 "use strict";
 
-import * as StringUtils from "./string-utils.js";
-import * as PasswordUtils from "./password-utils.js";
-import { isEqual } from "./is-equal.js";
-import { togglePasswords } from "./input-utils.js";
+import * as StringUtils from "./utils/string-utils.js";
+import * as PasswordUtils from "./utils/password-utils.js";
+import { isEqual } from "./utils/is-equal.js";
+import { togglePasswords } from "./utils/input-utils.js";
 
 const inputPW1 = document.querySelector("#pw1");
 const inputPW2 = document.querySelector("#pw2");
