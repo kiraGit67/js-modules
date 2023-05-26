@@ -1,12 +1,7 @@
 "use strict";
 
-import {
-  containsLowerCase,
-  containsUpperCase,
-  containsNumbers,
-} from "./string-utils.js";
-
-import { atLeast10charsLong } from "./password-utils.js";
+import * as StringUtils from "./string-utils.js";
+import * as PasswordUtils from "./password-utils.js";
 import { isEqual } from "./is-equal.js";
 
 const inputPW1 = document.querySelector("#pw1");
@@ -49,10 +44,10 @@ function checkPasswords() {
   }
 
   setCheckStatus(equal, isEqual(pw1, pw2));
-  setCheckStatus(numbers, containsNumbers(pw1));
-  setCheckStatus(lowerCase, containsLowerCase(pw1));
-  setCheckStatus(upperCase, containsUpperCase(pw1));
-  setCheckStatus(length, atLeast10charsLong(pw1));
+  setCheckStatus(numbers, StringUtils.containsNumbers(pw1));
+  setCheckStatus(lowerCase, StringUtils.containsLowerCase(pw1));
+  setCheckStatus(upperCase, StringUtils.containsUpperCase(pw1));
+  setCheckStatus(length, PasswordUtils.atLeast10charsLong(pw1));
 }
 
 function setCheckStatus(check, success) {
@@ -66,3 +61,5 @@ function setCheckStatus(check, success) {
 }
 
 checkPasswords();
+console.log(PasswordUtils);
+console.log(PasswordUtils.isValid("kiraGit1967"));
